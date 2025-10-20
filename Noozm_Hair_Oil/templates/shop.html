@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us | Noozm Hair Oil Care</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #9e9c9a;
+      color: #333;
+    }
+
+    header {
+      background-color: #5c2603;
+      padding: 2rem;
+      text-align: center;
+      color: #e7c144;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .contact-info {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+
+    .contact-info h2 {
+      color: #4a8c67;
+      margin-bottom: 1rem;
+    }
+
+    .info-item {
+      margin-bottom: 1rem;
+    }
+
+    .info-item strong {
+      display: block;
+      color: #222;
+    }
+
+    .contact-btn {
+      background: #4a8c67;
+      color: white;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 2rem;
+      font-size: 1rem;
+    }
+
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.5);
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-content {
+      background-color: #fff;
+      padding: 2rem;
+      border-radius: 8px;
+      width: 90%;
+      max-width: 500px;
+      position: relative;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .modal-content h3 {
+      margin-top: 0;
+      color: #4a8c67;
+    }
+
+    .close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 1.2rem;
+      cursor: pointer;
+      color: #666;
+    }
+
+    form label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin-top: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-family: inherit;
+    }
+
+    form button {
+      background-color: #4a8c67;
+      color: #fff;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      margin-top: 1.5rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    form button:hover {
+      background-color: #3b7454;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(-20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    @media (max-width: 600px) {
+      .modal-content {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Contact Noozm Hair Oil Care</h1>
+  </header>
+
+  <div class="container">
+    <div class="contact-info">
+      <h2>We’re here to help You</h2>
+
+      <div class="info-item">
+        <strong>Email:</strong>
+        noozmherbalhaircareoil@gmail.com
+      </div>
+
+      <div class="info-item">
+        <strong>Phone:</strong>
+        +91-8590832283
+      </div>
+
+      <div class="info-item">
+        <strong>Address:</strong>
+        Cherukulamba West,Malappuram,Kerala ,676504
+      </div>
+
+      <div class="info-item">
+        <strong>Hours:</strong>
+        Mon–Fri: 9AM – 6PM | Sat: 10AM – 4PM
+      </div>
+
+      <button class="contact-btn" id="openModal">Send a Message</button>
+    </div>
+  </div>
+
+
+  <div id="contactModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <h3>Contact Form</h3>
+      <form action="/submit-contact" method="POST">
+        <label for="name">Full Name*</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email Address*</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject">
+
+        <label for="message">Message*</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const modal = document.getElementById("contactModal");
+    const openBtn = document.getElementById("openModal");
+    const closeBtn = document.getElementById("closeModal");
+
+    openBtn.addEventListener("click", () => {
+      modal.style.display = "flex";
+    });
+
+    closeBtn.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+
+    window.onclick = (e) => {
+      if (e.target == modal) {
+        modal.style.display = "none";
+      }
+    };
+  </script>
+</body>
+</html>

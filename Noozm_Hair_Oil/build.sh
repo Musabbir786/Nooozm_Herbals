@@ -1,0 +1,1 @@
+﻿#!/usr/bin/env bash# exit on errorset -o errexitpip install -r requirements.txtpython manage.py collectstatic --no-inputpython manage.py migrate
